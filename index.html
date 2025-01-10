@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive IPA Chart</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        h1 {
+
+            margin-top: 20px;
+
+        }
+
+        .ipa-chart {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+
+            gap: 10px;
+
+            padding: 20px;
+
+        }
+
+        .ipa-symbol {
+
+            padding: 10px;
+
+            background-color: #f0f0f0;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s;
+
+        }
+
+        .ipa-symbol:hover {
+
+            background-color: #d0e6ff;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Interactive IPA Chart</h1>
+
+    <p>Click a symbol to hear its pronunciation!</p>
+
+    <div class="ipa-chart">
+
+        <!-- Consonants -->
+
+        <div class="ipa-symbol" data-audio="audio/p.mp3">/p/</div>
+
+        <div class="ipa-symbol" data-audio="audio/b.mp3">/b/</div>
+
+        <div class="ipa-symbol" data-audio="audio/t.mp3">/t/</div>
+
+        <div class="ipa-symbol" data-audio="audio/d.mp3">/d/</div>
+
+        <div class="ipa-symbol" data-audio="audio/k.mp3">/k/</div>
+
+        <div class="ipa-symbol" data-audio="audio/g.mp3">/g/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ʧ.mp3">/ʧ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ʤ.mp3">/ʤ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/f.mp3">/f/</div>
+
+        <div class="ipa-symbol" data-audio="audio/v.mp3">/v/</div>
+
+        <div class="ipa-symbol" data-audio="audio/θ.mp3">/θ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ð.mp3">/ð/</div>
+
+        <div class="ipa-symbol" data-audio="audio/s.mp3">/s/</div>
+
+        <div class="ipa-symbol" data-audio="audio/z.mp3">/z/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ʃ.mp3">/ʃ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ʒ.mp3">/ʒ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/m.mp3">/m/</div>
+
+        <div class="ipa-symbol" data-audio="audio/n.mp3">/n/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ŋ.mp3">/ŋ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/l.mp3">/l/</div>
+
+        <div class="ipa-symbol" data-audio="audio/r.mp3">/r/</div>
+
+        <div class="ipa-symbol" data-audio="audio/w.mp3">/w/</div>
+
+        <div class="ipa-symbol" data-audio="audio/j.mp3">/j/</div>
+
+        <div class="ipa-symbol" data-audio="audio/h.mp3">/h/</div>
+
+
+
+        <!-- Vowels -->
+
+        <div class="ipa-symbol" data-audio="audio/iː.mp3">/iː/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ɪ.mp3">/ɪ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/e.mp3">/e/</div>
+
+        <div class="ipa-symbol" data-audio="audio/æ.mp3">/æ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ɑː.mp3">/ɑː/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ɒ.mp3">/ɒ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ɔː.mp3">/ɔː/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ʊ.mp3">/ʊ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/uː.mp3">/uː/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ʌ.mp3">/ʌ/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ɜː.mp3">/ɜː/</div>
+
+        <div class="ipa-symbol" data-audio="audio/ə.mp3">/ə/</div>
+
+    </div>
+
+
+
+    <!-- JavaScript for interactivity -->
+
+    <script>
+
+        document.querySelectorAll('.ipa-symbol').forEach(symbol => {
+
+            symbol.addEventListener('click', () => {
+
+                const audioSrc = symbol.getAttribute('data-audio');
+
+                const audio = new Audio(audioSrc);
+
+                audio.play();
+
+            });
+
+        });
+
+    </script>
+
+
+
+    <!-- Note: Audio files need to be hosted in the specified "audio/" directory -->
+
+</body>
+
+</html>
